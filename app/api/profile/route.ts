@@ -31,3 +31,12 @@ export async function POST(req: NextRequest) {
     });
     return NextResponse.json(dbUser);
 }
+
+export async function DELETE(req: NextRequest) {
+    const session = await auth0.getSession();
+    if (!session?.user?.email) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    await prisma.user.delete({ where: { email: session.user.email } });
+    return NextResponse.json({ success: true });
+}

@@ -9,13 +9,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Your models go below
+// Models
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  name      String?
-  picture   String?
-  bio       String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String   @id @default(uuid())
+  email       String   @unique
+  name        String?
+  picture     String?
+  bio         String?
+  firstName   String?
+  lastName    String?
+  phoneNumber String?
+  city        String?
+  pincode     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
