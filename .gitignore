@@ -43,3 +43,7 @@ next-env.d.ts
 # Prisma
 prisma/dev.db
 /lib/generated/prisma
+temporal-worker/node_modules/
+temporal-worker/package-lock.json
+
+*node_modules
