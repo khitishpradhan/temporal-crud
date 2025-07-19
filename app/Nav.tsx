@@ -16,17 +16,6 @@ export default function Nav() {
           Login
         </a>
       )}
-      {user && (
-        <>
-          <span className="font-semibold">{user.name}</span>
-          <a
-            href="/auth/logout"
-            className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
-          >
-            Logout
-          </a>
-        </>
-      )}
     </nav>
   );
 }
